@@ -26,6 +26,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: #ada3dd; /* Same as weekday text color */
+            padding: 5px;
+            border-radius: 5px; /* Slightly rounded corners */
             margin-bottom: 5px; /* Margin below controls */
         }
 
@@ -38,12 +41,10 @@
         }
 
         .month-year {
-            background-color: #ada3dd; /* Same as weekday text color */
             color: white; /* Month and year text color */
             font-weight: bold;
-            padding: 5px; /* Padding for month-year */
-            border-radius: 5px; /* Slightly rounded corners */
-            margin-bottom: 5px; /* Margin below month-year */
+            flex-grow: 1; /* Allow the month-year to take available space */
+            text-align: center; /* Center the text */
         }
 
         .weekdays {
@@ -101,9 +102,9 @@
 </head>
 <body>
     <div class="calendar">
-        <div class="month-year" id="month-year"></div>
         <div class="controls">
             <button id="prev-month">◀</button>
+            <div class="month-year" id="month-year"></div>
             <button id="next-month">▶</button>
         </div>
         <div class="weekdays">
@@ -186,3 +187,4 @@
     </script>
 </body>
 </html>
+
