@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixed Size Minimalist Calendar Widget</title>
+    <title>Responsive Minimalist Calendar Widget</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -18,51 +18,58 @@
         .calendar {
             padding: 5px; /* Padding around the calendar */
             text-align: center;
-            width: 500px; /* Fixed width */
-            height: 400px; /* Fixed height */
+            width: 50vw; /* Width adjustable based on viewport */
+            max-width: 300px; /* Max width for the calendar */
+            height: auto; /* Height will adjust based on content */
             box-sizing: border-box; /* Include padding in width calculation */
         }
 
         .weekdays {
-            display: grid; /* Use grid layout */
+            display: grid;
             grid-template-columns: repeat(7, 1fr); /* 7 columns */
-            margin-bottom: 10px; /* Margin below weekdays */
+            gap: 5px; /* Gap between weekdays */
             font-weight: bold;
+            margin-bottom: 2px; /* Margin below weekdays */
         }
 
         .weekdays span {
             padding: 5px; /* Padding inside weekdays */
             box-sizing: border-box; /* Include padding in width calculation */
+            border-radius: 3px; /* Slightly rounded corners */
             color: #ada3dd; /* Text color */
             font-size: 14px; /* Font size for weekdays */
-            text-align: center; /* Center text */
+            background-color: transparent; /* No background */
         }
 
         .days {
-            display: grid; /* Use grid layout */
+            display: grid;
             grid-template-columns: repeat(7, 1fr); /* 7 columns */
+            gap: 5px; /* Gap between days */
             padding-top: 2px; /* Padding at the top for days */
         }
 
         .days span {
-            height: 50px; /* Height for days */
-            line-height: 50px; /* Center text vertically */
+            width: 100%; /* Fill available space */
+            height: 30px; /* Height for days */
+            line-height: 30px; /* Center text vertically */
+            text-align: center;
             border-radius: 50%; /* Circular shape for days */
             color: #37352f; /* Text color */
             transition: background-color 0.3s;
-            display: inline-block; /* Allow alignment */
+            display: inline-block;
             font-size: 12px; /* Font size for days */
-            text-align: center; /* Center text */
-            position: relative; /* Position for today highlight */
         }
 
         .days .today {
             background-color: #ada3dd; /* Highlight for the current day */
-            width: 50px; /* Width for current day */
-            height: 50px; /* Height for current day */
+            width: 30px; /* Width for current day */
+            height: 30px; /* Height for current day */
             border-radius: 50%; /* Make it circular */
-            color: white; /* Change text color for better contrast */
-            line-height: 50px; /* Center text vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto; /* Center the current day */
+            color: white; /* Optional: Change text color for better contrast */
         }
 
         .days span.empty {
@@ -136,4 +143,3 @@
     </script>
 </body>
 </html>
-
