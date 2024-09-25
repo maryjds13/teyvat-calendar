@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Minimalist Calendar Widget</title>
+    <title>Fixed Size Minimalist Calendar Widget</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -18,16 +18,18 @@
         .calendar {
             padding: 5px; /* Padding around the calendar */
             text-align: center;
-            width: 50vw; /* Width adjustable based on viewport */
-            max-width: 300px; /* Max width for the calendar */
-            height: auto; /* Height will adjust based on content */
+            width: 500px; /* Fixed width */
+            height: 400px; /* Fixed height */
             box-sizing: border-box; /* Include padding in width calculation */
+            display: flex;
+            flex-direction: column; /* Stack weekdays and days vertically */
+            justify-content: center; /* Center vertically */
         }
 
         .weekdays {
             display: flex; /* Use flexbox */
             justify-content: space-between; /* Space out weekdays evenly */
-            margin-bottom: 2px; /* Margin below weekdays */
+            margin-bottom: 10px; /* Margin below weekdays */
         }
 
         .weekdays span {
@@ -48,8 +50,8 @@
 
         .days span {
             flex: 1; /* Equal width for days */
-            height: 30px; /* Height for days */
-            line-height: 30px; /* Center text vertically */
+            height: 50px; /* Height for days */
+            line-height: 50px; /* Center text vertically */
             border-radius: 50%; /* Circular shape for days */
             color: #37352f; /* Text color */
             transition: background-color 0.3s;
@@ -61,8 +63,8 @@
 
         .days .today {
             background-color: #ada3dd; /* Highlight for the current day */
-            width: 30px; /* Width for current day */
-            height: 30px; /* Height for current day */
+            width: 50px; /* Width for current day */
+            height: 50px; /* Height for current day */
             border-radius: 50%; /* Make it circular */
             color: white; /* Change text color for better contrast */
         }
