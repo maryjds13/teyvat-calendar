@@ -98,7 +98,7 @@
         let firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay(); // 0 is Sunday, 1 is Monday, etc.
 
         // Adjust so that Monday is treated as the first day of the week
-        firstDayOfMonth = firstDayOfMonth === 0 ? 6 : firstDayOfMonth - 1;
+        firstDayOfMonth = (firstDayOfMonth === 0) ? 6 : firstDayOfMonth - 1;
 
         // Create empty slots for days before the 1st (to align the grid)
         for (let i = 0; i < firstDayOfMonth; i++) {
@@ -134,4 +134,3 @@
     </script>
 </body>
 </html>
-        
