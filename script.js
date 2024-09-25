@@ -10,15 +10,15 @@ const currentYear = today.getFullYear();
 const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
 // Get the first day of the month (to determine where the grid starts)
-const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay(); // 0 is Sunday, 1 is Monday, etc.
+let firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay(); // 0 is Sunday, 1 is Monday, etc.
 
 // Adjust so that Monday is treated as the first day of the week
-const adjustedFirstDay = firstDayOfMonth === 0 ? 6 : firstDayOfMonth - 1;
+firstDayOfMonth = firstDayOfMonth === 0 ? 6 : firstDayOfMonth - 1;
 
-// Create empty slots for days before the 1st (to align the first day of the month)
-for (let i = 0; i < adjustedFirstDay; i++) {
+// Create empty slots for days before the 1st (to align the grid)
+for (let i = 0; i < firstDayOfMonth; i++) {
     const emptyElement = document.createElement('span');
-    emptyElement.textContent = '';
+    emptyElement.classList.add('empty');
     daysContainer.appendChild(emptyElement);
 }
 
