@@ -16,46 +16,46 @@
         }
 
         .calendar {
-            padding: 5px; /* Reduced padding around the calendar */
+            padding: 2px; /* Minimal padding around the calendar */
             text-align: center;
-            width: 150px; /* Set a very small width for the calendar */
+            width: 120px; /* Very small width for the calendar */
             box-sizing: border-box; /* Include padding and borders in the width */
         }
 
         .weekdays {
             display: grid;
             grid-template-columns: repeat(7, 1fr); /* Exactly 7 columns */
-            gap: 2px; /* Gap between weekdays */
+            gap: 1px; /* Minimal gap between weekdays */
             font-weight: bold;
-            margin-bottom: 2px; /* Margin below weekdays for spacing */
+            margin-bottom: 1px; /* Margin below weekdays for spacing */
         }
 
         .weekdays span {
-            padding: 2px; /* Reduced padding inside weekdays */
+            padding: 1px; /* Minimal padding inside weekdays */
             box-sizing: border-box; /* Ensure padding is included in the width */
             line-height: 1; /* Adjust line height for compactness */
             background-color: #ddcde5; /* Set background color for weekdays titles */
             border-radius: 3px; /* Optional: add rounded corners */
             color: #000; /* Text color */
-            font-size: 10px; /* Smaller font size */
+            font-size: 8px; /* Smaller font size */
         }
 
         .days {
             display: grid;
             grid-template-columns: repeat(7, 1fr); /* Exactly 7 columns */
-            gap: 2px; /* Reduced gap between days */
-            padding-top: 2px; /* Reduced padding at the top for days */
+            gap: 1px; /* Minimal gap between days */
+            padding-top: 1px; /* Minimal padding at the top for days */
         }
 
         .days span {
-            width: 30px; /* Reduced width for days */
-            height: 30px; /* Reduced height for days */
-            line-height: 30px; /* Center text vertically */
+            width: 20px; /* Very small width for days */
+            height: 20px; /* Very small height for days */
+            line-height: 20px; /* Center text vertically */
             text-align: center;
             border-radius: 50%;
             transition: background-color 0.3s;
             display: inline-block;
-            font-size: 10px; /* Smaller font size for days */
+            font-size: 8px; /* Smaller font size for days */
         }
 
         .days .today {
