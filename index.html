@@ -18,38 +18,37 @@
         .calendar {
             padding: 2px; /* Minimal padding around the calendar */
             text-align: center;
-            width: 120px; /* Very small width for the calendar */
-            box-sizing: border-box; /* Include padding and borders in the width */
+            width: 120px; /* Smaller width for the calendar */
+            box-sizing: border-box; /* Include padding in width calculation */
         }
 
         .weekdays {
             display: grid;
-            grid-template-columns: repeat(7, 1fr); /* Exactly 7 columns */
-            gap: 1px; /* Minimal gap between weekdays */
+            grid-template-columns: repeat(7, 1fr); /* 7 columns */
+            gap: 1px; /* Very small gap between weekdays */
             font-weight: bold;
-            margin-bottom: 1px; /* Margin below weekdays for spacing */
+            margin-bottom: 1px; /* Minimal margin below weekdays */
         }
 
         .weekdays span {
-            padding: 1px; /* Minimal padding inside weekdays */
-            box-sizing: border-box; /* Ensure padding is included in the width */
-            line-height: 1; /* Adjust line height for compactness */
-            background-color: #ddcde5; /* Set background color for weekdays titles */
-            border-radius: 3px; /* Optional: add rounded corners */
+            padding: 2px; /* Minimal padding inside weekdays */
+            box-sizing: border-box; /* Include padding in width calculation */
+            background-color: #ddcde5; /* Background color for weekdays titles */
+            border-radius: 2px; /* Slightly rounded corners */
             color: #000; /* Text color */
             font-size: 8px; /* Smaller font size */
         }
 
         .days {
             display: grid;
-            grid-template-columns: repeat(7, 1fr); /* Exactly 7 columns */
-            gap: 1px; /* Minimal gap between days */
+            grid-template-columns: repeat(7, 1fr); /* 7 columns */
+            gap: 1px; /* Very small gap between days */
             padding-top: 1px; /* Minimal padding at the top for days */
         }
 
         .days span {
-            width: 20px; /* Very small width for days */
-            height: 20px; /* Very small height for days */
+            width: 20px; /* Reduced width for days */
+            height: 20px; /* Reduced height for days */
             line-height: 20px; /* Center text vertically */
             text-align: center;
             border-radius: 50%;
@@ -59,12 +58,11 @@
         }
 
         .days .today {
-            background-color: #ddcde5; /* Custom color highlight for the current day */
+            background-color: #ddcde5; /* Highlight for the current day */
         }
 
         .days span.empty {
-            background-color: transparent; /* Empty slots for alignment */
-            visibility: hidden; /* Hide empty slots to prevent visual distortion */
+            visibility: hidden; /* Hide empty slots for alignment */
         }
     </style>
 </head>
@@ -114,7 +112,7 @@
 
             // Highlight the current day
             if (day === currentDate) {
-                dayElement.classList.add('today'); // Apply the lavender highlight
+                dayElement.classList.add('today'); // Highlight current day
             }
 
             daysContainer.appendChild(dayElement);
