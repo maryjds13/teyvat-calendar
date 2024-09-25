@@ -23,6 +23,17 @@ body {
     margin-bottom: 10px;
 }
 
+.weekdays::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ddcde5;
+    position: absolute;
+    bottom: -5px; /* Adjust to control the spacing */
+
+}
+
 .weekdays span {
     text-align: center;
 }
@@ -44,7 +55,7 @@ body {
 }
 
 .days .today {
-    background-color: lavender; /* Highlight for the current day */
+    background-color: #ddcde5; /* Highlight for the current day */
 }
 
 .days span.empty {
