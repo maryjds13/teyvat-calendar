@@ -119,6 +119,19 @@
 
             daysContainer.appendChild(dayElement);
         }
+
+        // Adjust for the number of days to ensure that the last row does not create an extra column
+        const totalDaysDisplayed = firstDayOfMonth + daysInMonth;
+        const totalRows = Math.ceil(totalDaysDisplayed / 7); // Total number of rows
+        const totalSlots = totalRows * 7; // Total slots in the grid
+
+        // Create empty slots for alignment in the last row if necessary
+        for (let i = totalDaysDisplayed; i < totalSlots; i++) {
+            const emptyElement = document.createElement('span');
+            emptyElement.classList.add('empty');
+            daysContainer.appendChild(emptyElement);
+        }
     </script>
 </body>
 </html>
+        
