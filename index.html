@@ -27,22 +27,31 @@
             justify-content: space-between;
             align-items: center;
             background-color: #ada3dd; /* Same as weekday text color */
-            padding: 5px;
+            padding: 10px; /* More padding for better visibility */
             border-radius: 5px; /* Slightly rounded corners */
             margin-bottom: 5px; /* Margin below controls */
         }
 
         .controls button {
-            background-color: transparent;
+            background-color: #ada3dd; /* Same background color */
             border: none;
             color: white; /* Button text color */
             font-size: 16px;
             cursor: pointer;
+            width: 40px; /* Fixed width for buttons */
+        }
+
+        .month-year-container {
+            background-color: #ada3dd; /* Same background color */
+            padding: 10px; /* Padding for visibility */
+            border-radius: 5px; /* Slightly rounded corners */
+            margin-bottom: 5px; /* Margin below month/year */
         }
 
         .month-year {
             color: white; /* Month and year text color */
             font-weight: bold;
+            text-align: center; /* Center the text */
         }
 
         .weekdays {
@@ -102,8 +111,10 @@
     <div class="calendar">
         <div class="controls">
             <button id="prev-month">◀</button>
-            <div class="month-year" id="month-year"></div>
             <button id="next-month">▶</button>
+        </div>
+        <div class="month-year-container">
+            <div class="month-year" id="month-year"></div>
         </div>
         <div class="weekdays">
             <span>Mon</span>
