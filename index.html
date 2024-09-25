@@ -25,38 +25,37 @@
         }
 
         .weekdays {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr); /* 7 columns */
-            gap: 5px; /* Gap between weekdays */
-            font-weight: bold;
+            display: flex; /* Use flexbox */
+            justify-content: space-between; /* Space out weekdays evenly */
             margin-bottom: 2px; /* Margin below weekdays */
         }
 
         .weekdays span {
+            flex: 1; /* Equal width for weekdays */
             padding: 5px; /* Padding inside weekdays */
             box-sizing: border-box; /* Include padding in width calculation */
-            border-radius: 3px; /* Slightly rounded corners */
             color: #ada3dd; /* Text color */
             font-size: 14px; /* Font size for weekdays */
             background-color: transparent; /* No background */
+            text-align: center; /* Center text */
         }
 
         .days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr); /* 7 columns */
-            gap: 5px; /* Gap between days */
+            display: flex; /* Use flexbox */
+            justify-content: space-between; /* Space out days evenly */
             padding-top: 2px; /* Padding at the top for days */
         }
 
         .days span {
-            width: 100%; /* Fill available space */
+            flex: 1; /* Equal width for days */
             height: 30px; /* Height for days */
             line-height: 30px; /* Center text vertically */
-            text-align: center;
             border-radius: 50%; /* Circular shape for days */
             color: #37352f; /* Text color */
             transition: background-color 0.3s;
-            display: inline-block;
+            display: flex; /* Flexbox for centering */
+            justify-content: center; /* Center text */
+            align-items: center; /* Center text vertically */
             font-size: 12px; /* Font size for days */
         }
 
@@ -65,11 +64,7 @@
             width: 30px; /* Width for current day */
             height: 30px; /* Height for current day */
             border-radius: 50%; /* Make it circular */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: auto; /* Center the current day */
-            color: white; /* Optional: Change text color for better contrast */
+            color: white; /* Change text color for better contrast */
         }
 
         .days span.empty {
