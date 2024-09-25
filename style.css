@@ -9,7 +9,6 @@ body {
 }
 
 .calendar {
-    /* No background or border for the calendar itself */
     padding: 20px;
     text-align: center;
     width: 350px;
@@ -17,10 +16,11 @@ body {
 
 .weekdays {
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* 7 columns for each day of the week */
+    grid-template-columns: repeat(7, 1fr); /* Exactly 7 columns */
     gap: 10px;
     font-weight: bold;
     margin-bottom: 10px;
+    position: relative;
 }
 
 .weekdays::after {
@@ -28,20 +28,17 @@ body {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #ddcde5;
+    background-color: #ddcde5; /* Custom color line below weekdays */
     position: absolute;
-    bottom: -5px; /* Adjust to control the spacing */
-
-}
-
-.weekdays span {
-    text-align: center;
+    bottom: -5px;
 }
 
 .days {
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* 7 columns for each day of the week */
+    grid-template-columns: repeat(7, 1fr); /* Exactly 7 columns */
     gap: 10px;
+    padding-top: 10px;
+    border-top: 2px solid #ddcde5; /* Custom color line above days */
 }
 
 .days span {
@@ -55,9 +52,9 @@ body {
 }
 
 .days .today {
-    background-color: #ddcde5; /* Highlight for the current day */
+    background-color: #ddcde5; /* Custom color highlight for the current day */
 }
 
 .days span.empty {
-    background-color: transparent; /* Empty slots have no background */
+    background-color: transparent; /* Empty slots for alignment */
 }
