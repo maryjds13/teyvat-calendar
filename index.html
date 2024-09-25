@@ -24,8 +24,7 @@
 
         .controls {
             display: flex;
-            flex-direction: column; /* Stack the buttons and month-year */
-            align-items: center;
+            justify-content: space-between; /* Position buttons on corners */
             background-color: #ada3dd; /* Same as weekday text color */
             padding: 15px; /* Increased padding for better visibility */
             border-radius: 5px; /* Slightly rounded corners */
@@ -45,7 +44,10 @@
             color: white; /* Month and year text color */
             font-weight: bold;
             font-size: 18px; /* Increased font size */
-            margin-top: 10px; /* Space between button and text */
+            background-color: #ada3dd; /* Same background color */
+            padding: 10px; /* Padding for better visibility */
+            border-radius: 5px; /* Slightly rounded corners */
+            margin-bottom: 5px; /* Space below month-year */
         }
 
         .weekdays {
@@ -92,103 +94,4 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: auto; /* Center the current day */
-            color: white; /* Optional: Change text color for better contrast */
-        }
-
-        .days span.empty {
-            visibility: hidden; /* Hide empty slots for alignment */
-        }
-    </style>
-</head>
-<body>
-    <div class="calendar">
-        <div class="controls">
-            <div>
-                <button id="prev-month">◀</button>
-                <button id="next-month">▶</button>
-            </div>
-            <div class="month-year" id="month-year"></div>
-        </div>
-        <div class="weekdays">
-            <span>Mon</span>
-            <span>Tue</span>
-            <span>Wed</span>
-            <span>Thu</span>
-            <span>Fri</span>
-            <span>Sat</span>
-            <span>Sun</span>
-        </div>
-        <div id="days-container" class="days"></div>
-    </div>
-
-    <script>
-        const daysContainer = document.getElementById('days-container');
-        const monthYearDisplay = document.getElementById('month-year');
-        const prevMonthButton = document.getElementById('prev-month');
-        const nextMonthButton = document.getElementById('next-month');
-
-        let currentDate = new Date();
-
-        function renderCalendar() {
-            daysContainer.innerHTML = ''; // Clear previous days
-            const currentMonth = currentDate.getMonth();
-            const currentYear = currentDate.getFullYear();
-            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-            let firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
-            firstDayOfMonth = (firstDayOfMonth === 0) ? 6 : firstDayOfMonth - 1;
-
-            // Create empty slots for days before the 1st (to align the grid)
-            for (let i = 0; i < firstDayOfMonth; i++) {
-                const emptyElement = document.createElement('span');
-                emptyElement.classList.add('empty');
-                daysContainer.appendChild(emptyElement);
-            }
-
-            // Generate all the days of the current month
-            for (let day = 1; day <= daysInMonth; day++) {
-                const dayElement = document.createElement('span');
-                dayElement.textContent = day;
-
-                // Highlight the current day
-                if (day === currentDate.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear()) {
-                    dayElement.classList.add('today'); // Highlight current day
-                }
-
-                daysContainer.appendChild(dayElement);
-            }
-
-            // Adjust for the number of days to ensure that the last row does not create an extra column
-            const totalDaysDisplayed = firstDayOfMonth + daysInMonth;
-            const totalRows = Math.ceil(totalDaysDisplayed / 7); // Total number of rows
-            const totalSlots = totalRows * 7; // Total slots in the grid
-
-            // Create empty slots for alignment in the last row if necessary
-            for (let i = totalDaysDisplayed; i < totalSlots; i++) {
-                const emptyElement = document.createElement('span');
-                emptyElement.classList.add('empty');
-                daysContainer.appendChild(emptyElement);
-            }
-
-            // Update the month and year display
-            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            monthYearDisplay.textContent = `${monthNames[currentMonth]} ${currentYear}`;
-        }
-
-        prevMonthButton.addEventListener('click', () => {
-            currentDate.setMonth(currentDate.getMonth() - 1);
-            renderCalendar();
-        });
-
-        nextMonthButton.addEventListener('click', () => {
-            currentDate.setMonth(currentDate.getMonth() + 1);
-            renderCalendar();
-        });
-
-        // Initial render
-        renderCalendar();
-    </script>
-</body>
-</html>
-
-
+            margin: auto
