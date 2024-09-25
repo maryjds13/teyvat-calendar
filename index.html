@@ -25,34 +25,23 @@
         .weekdays {
             display: grid;
             grid-template-columns: repeat(7, 1fr); /* Exactly 7 columns */
-            gap: 0; /* No gap to ensure the line aligns perfectly */
+            gap: 10px; /* Gap between weekdays */
             font-weight: bold;
-            margin-bottom: 0; /* Remove bottom margin to align with the line */
-            position: relative;
+            margin-bottom: 10px; /* Margin below weekdays for spacing */
         }
 
         .weekdays span {
             padding: 10px; /* Padding inside weekdays for better spacing */
             box-sizing: border-box; /* Ensure padding is included in the width */
             line-height: 1.5; /* Adjust line height for better text alignment */
-        }
-
-        .weekdays::after {
-            content: '';
-            display: block;
-            width: 100%; /* Ensure the line spans full width */
-            height: 2px;
-            background-color: #ddcde5; /* Custom color line below weekdays */
-            position: absolute;
-            bottom: -5px; /* Position of the line */
-            left: 0; /* Align to the left */
+            color: #ada3dd; /* Text color */
         }
 
         .days {
             display: grid;
             grid-template-columns: repeat(7, 1fr); /* Exactly 7 columns */
             gap: 10px; /* Gap between days */
-            padding-top: 0; /* No padding at the top for days */
+            padding-top: 10px; /* Padding at the top for days */
         }
 
         .days span {
@@ -61,6 +50,7 @@
             line-height: 50px; /* Center text vertically */
             text-align: center;
             border-radius: 50%;
+            color: #37352f; /* Text Color */
             transition: background-color 0.3s;
             display: inline-block;
         }
