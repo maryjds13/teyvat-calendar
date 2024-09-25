@@ -25,7 +25,7 @@
         .weekdays {
             display: grid;
             grid-template-columns: repeat(7, 1fr); /* Exactly 7 columns */
-            gap: 10px;
+            gap: 0; /* No gap to ensure the line aligns perfectly */
             font-weight: bold;
             margin-bottom: 0; /* Remove bottom margin to align with the line */
             position: relative;
@@ -40,19 +40,19 @@
         .weekdays::after {
             content: '';
             display: block;
-            width: calc(100% - 10px); /* Adjust to span full width minus gap */
+            width: 100%; /* Ensure the line spans full width */
             height: 2px;
             background-color: #ddcde5; /* Custom color line below weekdays */
             position: absolute;
-            bottom: -5px; /* Adjust position as needed */
+            bottom: -5px; /* Position of the line */
             left: 0; /* Align to the left */
         }
 
         .days {
             display: grid;
             grid-template-columns: repeat(7, 1fr); /* Exactly 7 columns */
-            gap: 10px;
-            padding-top: 10px; /* Padding at the top for days */
+            gap: 10px; /* Gap between days */
+            padding-top: 0; /* No padding at the top for days */
         }
 
         .days span {
@@ -141,4 +141,3 @@
     </script>
 </body>
 </html>
-
