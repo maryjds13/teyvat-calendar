@@ -18,7 +18,8 @@
         .calendar {
             padding: 20px;
             text-align: center;
-            width: 350px;
+            width: 350px; /* Set width of the calendar */
+            box-sizing: border-box; /* Include padding and borders in the width */
         }
 
         .weekdays {
@@ -31,15 +32,15 @@
         }
 
         .weekdays span {
-            width: 50px; /* Fixed width for weekdays */
-            height: 50px; /* Fixed height for weekdays */
-            line-height: 50px; /* Center text vertically */
+            padding: 10px; /* Padding inside weekdays for better spacing */
+            box-sizing: border-box; /* Ensure padding is included in the width */
+            line-height: 1.5; /* Adjust line height for better text alignment */
         }
 
         .weekdays::after {
             content: '';
             display: block;
-            width: 100%; /* Make the line span the full width */
+            width: calc(100% - 10px); /* Adjust to span full width minus gap */
             height: 2px;
             background-color: #ddcde5; /* Custom color line below weekdays */
             position: absolute;
@@ -140,3 +141,4 @@
     </script>
 </body>
 </html>
+
