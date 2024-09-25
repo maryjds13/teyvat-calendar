@@ -30,6 +30,12 @@
             position: relative;
         }
 
+        .weekdays span {
+            width: 50px; /* Fixed width for weekdays */
+            height: 50px; /* Fixed height for weekdays */
+            line-height: 50px; /* Center text vertically */
+        }
+
         .weekdays::after {
             content: '';
             display: block;
@@ -49,9 +55,9 @@
         }
 
         .days span {
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
+            width: 50px; /* Fixed width for days */
+            height: 50px; /* Fixed height for days */
+            line-height: 50px; /* Center text vertically */
             text-align: center;
             border-radius: 50%;
             transition: background-color 0.3s;
@@ -134,3 +140,4 @@
     </script>
 </body>
 </html>
+
