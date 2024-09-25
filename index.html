@@ -38,13 +38,14 @@
             color: white; /* Button text color */
             font-size: 16px;
             cursor: pointer;
+            width: 50px; /* Fixed width for buttons */
         }
 
         .month-year {
             color: white; /* Month and year text color */
             font-weight: bold;
-            flex-grow: 1; /* Allow this element to take up remaining space */
-            text-align: center; /* Center align the month-year text */
+            flex-grow: 1; /* Allow this to grow and take available space */
+            text-align: center; /* Center the text */
         }
 
         .weekdays {
@@ -148,7 +149,7 @@
                 dayElement.textContent = day;
 
                 // Highlight the current day
-                if (day === currentDate.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear()) {
+                if (day === currentDate.getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear()) {
                     dayElement.classList.add('today'); // Highlight current day
                 }
 
