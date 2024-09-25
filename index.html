@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimalist Calendar Widget</title>
+    <title>Responsive Minimalist Calendar Widget</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -16,45 +16,47 @@
         }
 
         .calendar {
-            padding: 2px; /* Minimal padding around the calendar */
+            padding: 5px; /* Padding around the calendar */
             text-align: center;
-            width: 120px; /* Smaller width for the calendar */
+            width: 50vw; /* Width adjustable based on viewport */
+            max-width: 300px; /* Max width for the calendar */
+            height: auto; /* Height will adjust based on content */
             box-sizing: border-box; /* Include padding in width calculation */
         }
 
         .weekdays {
             display: grid;
             grid-template-columns: repeat(7, 1fr); /* 7 columns */
-            gap: 1px; /* Very small gap between weekdays */
+            gap: 2px; /* Gap between weekdays */
             font-weight: bold;
-            margin-bottom: 1px; /* Minimal margin below weekdays */
+            margin-bottom: 2px; /* Margin below weekdays */
         }
 
         .weekdays span {
-            padding: 2px; /* Minimal padding inside weekdays */
+            padding: 5px; /* Padding inside weekdays */
             box-sizing: border-box; /* Include padding in width calculation */
             background-color: #ddcde5; /* Background color for weekdays titles */
-            border-radius: 2px; /* Slightly rounded corners */
+            border-radius: 3px; /* Slightly rounded corners */
             color: #000; /* Text color */
-            font-size: 8px; /* Smaller font size */
+            font-size: 14px; /* Font size for weekdays */
         }
 
         .days {
             display: grid;
             grid-template-columns: repeat(7, 1fr); /* 7 columns */
-            gap: 1px; /* Very small gap between days */
-            padding-top: 1px; /* Minimal padding at the top for days */
+            gap: 2px; /* Gap between days */
+            padding-top: 2px; /* Padding at the top for days */
         }
 
         .days span {
-            width: 20px; /* Reduced width for days */
-            height: 20px; /* Reduced height for days */
-            line-height: 20px; /* Center text vertically */
+            width: 100%; /* Fill available space */
+            height: 30px; /* Height for days */
+            line-height: 30px; /* Center text vertically */
             text-align: center;
             border-radius: 50%;
             transition: background-color 0.3s;
             display: inline-block;
-            font-size: 8px; /* Smaller font size for days */
+            font-size: 12px; /* Font size for days */
         }
 
         .days .today {
