@@ -24,7 +24,8 @@
 
         .controls {
             display: flex;
-            justify-content: space-between; /* Position buttons on corners */
+            flex-direction: column; /* Stack the buttons and month-year */
+            align-items: center;
             background-color: #ada3dd; /* Same as weekday text color */
             padding: 15px; /* Increased padding for better visibility */
             border-radius: 5px; /* Slightly rounded corners */
@@ -44,10 +45,7 @@
             color: white; /* Month and year text color */
             font-weight: bold;
             font-size: 18px; /* Increased font size */
-            background-color: #ada3dd; /* Same background color */
-            padding: 10px; /* Padding for better visibility */
-            border-radius: 5px; /* Slightly rounded corners */
-            margin-bottom: 5px; /* Space below month-year */
+            margin-top: 10px; /* Space between button and text */
         }
 
         .weekdays {
